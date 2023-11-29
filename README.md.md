@@ -14,6 +14,8 @@ Create a new environment
    cd project-dir
 
    virtualenv venvironment
+   or 
+   py -3.12 -m venv myenv 
 
    venvironment\Scripts\activate
 ```
@@ -24,5 +26,5 @@ py -3.12 -m pip install "C:\Users\Pramod Rai\Downloads\seaborn-0.13.0-py3-none-a
 py -3.12 -m pip install "C:\Users\Pramod Rai\Downloads\matplotlib-3.8.2-cp312-cp312-win_amd64.whl"
 py -3.12 -m pip install "C:\Users\Pramod Rai\Downloads\scikit_learn-1.3.2-cp312-cp312-win_amd64.whl"
 py -3.12 -m pip install "C:\Users\Pramod Rai\Downloads\pandas-2.1.3-cp312-cp312-win_amd64.whl"
-
+py -3.12 -m pip install "C:\Users\Pramod Rai\Downloads\flask-3.0.0-py3-none-any.whl"
 ```
