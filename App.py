@@ -25,6 +25,25 @@ def predict_api():
     print(output[0])
     return jsonify(output[0]) #convert a Python dictionary into a JSON response that can be sent back to the client
 
+# This defines a route '/predict' that handles POST requests
+@app.route('/predict', methods=['POST'])
+def predict():
+    # Extracting data from the form and converting it to float
+    data = [float(x) for x in request.form.values()]
+
+    # Transforming the input data using a scaler (assuming 'scalar' is a scaler object)
+    final_input = (np.array(data).reshape(1, -1))
+
+    # Printing the transformed input data for debugging/logging purposes
+    print(final_input)
+
+    # Predicting output using a regression model (assuming 'regmodel' is a trained model)
+    output = rfmodel.predict(final_input)[0]
+
+    # Rendering an HTML template with the predicted output
+    return render_template("home.html", prediction_text="The House price prediction is {}".format(output))
+
+
 #starting the appplication
 if __name__=="__main__":
     app.run(debug=True)
